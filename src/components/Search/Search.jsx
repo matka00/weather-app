@@ -28,6 +28,7 @@ function Search({ onSearchChange }) {
     setSelectedValue(searchData);
     onSearchChange(searchData);
   };
+  
   return (
     <AsyncSelect
       placeholder="Search for city"
