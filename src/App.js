@@ -1,23 +1,44 @@
-import { useState } from 'react';
-import './App.css';
-import Search from './components/search/Search';
-import CurrentWeather from './components/weather/CurrentWeather';
+import { Fragment, useState } from "react";
+import Search from "./components/search/Search";
+import CurrentBackground from "./components/ui/CurrentBackground";
+import CurrentWeather from "./components/weather/CurrentWeather";
+import "./App.css";
 
 function App() {
-
   const [selectedCity, setSelectedCity] = useState(null);
+  const [conditions, setConditions] = useState(null);
 
   const handleOnSearchChange = (searchData) => {
-    setSelectedCity(searchData)
-  }
+    setSelectedCity(searchData);
+  };
 
-  console.log(selectedCity)
+  const currentConditions = (isDay, conditionCode) => {
+    let conditionData = {
+      isDay: isDay,
+      conditionCode: conditionCode,
+    };
+    setConditions(conditionData);
+  };
+
+  console.log(selectedCity);
+  console.log(conditions);
 
   return (
-    <div className="App">
-      <Search onSearchChange={handleOnSearchChange}/>
-      {selectedCity && <CurrentWeather data={selectedCity}/>}
-    </div>
+    <Fragment>
+      {conditions && <CurrentBackground conditionData={conditions} />}
+      <section className="main-section">
+        <header>
+          <h1>Check the weather</h1>
+          <Search onSearchChange={handleOnSearchChange} />
+        </header>
+        {selectedCity && (
+          <CurrentWeather
+            data={selectedCity}
+            currentConditions={currentConditions}
+          />
+        )}
+      </section>
+    </Fragment>
   );
 }
 

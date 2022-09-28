@@ -1,7 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { WEATHERAPI_KEY, WEATHERAPI_URL } from "../../api/apiData";
+import classes from "./CurrentWeather.module.css";
 
-function CurrentWeather({ data }) {
+function CurrentWeather({ data, currentConditions }) {
   const [currentWeather, setCurrentWeather] = useState(null);
 
   const coordinates = data.value;
@@ -17,6 +18,10 @@ function CurrentWeather({ data }) {
     const currentWeatherData = await currentWeatherResponse.json();
     console.log(currentWeatherData);
     setCurrentWeather(currentWeatherData);
+    currentConditions(
+      currentWeatherData.current.is_day,
+      currentWeatherData.current.condition.code
+    );
   };
 
   useEffect(() => {
@@ -28,59 +33,76 @@ function CurrentWeather({ data }) {
     }
   }, [coordinates]);
 
+  let cardBackground;
+
+  if (currentWeather.current.is_day === 1) {
+    cardBackground = "day";
+  } else if (currentWeather.current.is_day === 0) {
+    cardBackground = "night";
+  }
+
   return (
     <Fragment>
       {currentWeather && (
-        <section>
-          <div>
-            <p>{currentWeather.current.temp_c}°C</p>
-            <div>
-              <p>{data.label}</p>
-              <p>{currentWeather.location.localtime}</p>
+        <section
+          className={`${classes["current-card"]} ${classes[cardBackground]}`}
+        >
+          <div className={classes["left-section"]}>
+            <div className={classes["location-info"]}>
+              <div className="location">
+                <h3>{data.label.split(",")[0]},</h3>
+                <h3 className={classes.country}>{data.label.split(",")[1]}</h3>
+                <h4>{currentWeather.location.localtime.split(" ")[1]}</h4>
+                <h4 className={classes.date}>
+                  {currentWeather.location.localtime.split(" ")[0]}
+                </h4>
+              </div>
             </div>
-            <div>
+            <hr />
+            <div className={classes.details}>
+              <div className={classes["detail-units"]}>
+                <h5>Feels like</h5>
+                <p>{currentWeather.current.feelslike_c} °C</p>
+              </div>
+              <div className={classes["detail-units"]}>
+                <h5>Clouds</h5>
+                <p>{currentWeather.current.cloud} %</p>
+              </div>
+              <div className={classes["detail-units"]}>
+                <h5>Humidity</h5>
+                <p>{currentWeather.current.humidity} %</p>
+              </div>
+              <div className={classes["detail-units"]}>
+                <h5>Precipitation</h5>
+                <p>{currentWeather.current.precip_mm} mm</p>
+              </div>
+              <div className={classes["detail-units"]}>
+                <h5>UV</h5>
+                <p>{currentWeather.current.uv}</p>
+              </div>
+              <div className={classes["detail-units"]}>
+                <h5>Wind</h5>
+                <p>{currentWeather.current.wind_kph} km/h</p>
+              </div>
+              <div className={classes["detail-units"]}>
+                <h5>Wind gust</h5>
+                <p>{currentWeather.current.gust_kph} km/h</p>
+              </div>
+              <div className={classes["detail-units"]}>
+                <h5>Pressure</h5>
+                <p>{currentWeather.current.pressure_mb} mb</p>
+              </div>
+            </div>
+          </div>
+          <div className={classes["right-section"]}>
+            <div className={classes.condition}>
               <img
-                src={currentWeather.current.condition.icon}
+                src={require(`../../assets/icons/${currentWeather.current.condition.code}-${currentWeather.current.is_day}.svg`)}
                 alt="Weather condition"
               ></img>
-              <p>{currentWeather.current.condition.text}</p>
+              <h4>{currentWeather.current.condition.text}</h4>
             </div>
-          </div>
-          <div>
-            <p>Feels like</p>
-            <p>{currentWeather.current.feelslike_c}°C</p>
-          </div>
-          <div>
-            <p>Clouds</p>
-            <p>{currentWeather.current.cloud}%</p>
-          </div>
-          <div>
-            <p>Humidity</p>
-            <p>{currentWeather.current.humidity}%</p>
-          </div>
-          <div>
-            <p>Precipitation</p>
-            <p>{currentWeather.current.precip_mm} mm</p>
-          </div>
-          <div>
-            <p>UV</p>
-            <p>{currentWeather.current.uv}</p>
-          </div>
-          <div>
-            <p>Wind</p>
-            <p>{currentWeather.current.wind_kph} km/h</p>
-          </div>
-          <div>
-            <p>Wind direction</p>
-            <p>{currentWeather.current.wind_dir}</p>
-          </div>
-          <div>
-            <p>Wind gust</p>
-            <p>{currentWeather.current.gust_kph} km/h</p>
-          </div>
-          <div>
-            <p>Pressure</p>
-            <p>{currentWeather.current.pressure_mb} mb</p>
+            <h2>{currentWeather.current.temp_c}°C</h2>
           </div>
         </section>
       )}

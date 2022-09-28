@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AsyncSelect from "react-select/async";
 import { WEATHERAPI_KEY, WEATHERAPI_URL } from "../../api/apiData";
+import classes from './Search.module.css';
 
 function Search({ onSearchChange }) {
   const [selectedValue, setSelectedValue] = useState(null);
@@ -31,6 +32,7 @@ function Search({ onSearchChange }) {
   
   return (
     <AsyncSelect
+      className={classes.search}
       placeholder="Search for city"
       value={selectedValue}
       onChange={handleOnchange}
