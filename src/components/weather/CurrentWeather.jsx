@@ -4,6 +4,7 @@ import classes from "./CurrentWeather.module.css";
 
 function CurrentWeather({ data, currentConditions }) {
   const [currentWeather, setCurrentWeather] = useState(null);
+  const [cardBackground, setCardBackground] = useState(null);
 
   const coordinates = data.value;
 
@@ -22,6 +23,11 @@ function CurrentWeather({ data, currentConditions }) {
       currentWeatherData.current.is_day,
       currentWeatherData.current.condition.code
     );
+    if (currentWeatherData.current.is_day === 1) {
+      setCardBackground('day');
+    } else if (currentWeatherData.current.is_day === 0) {
+      setCardBackground('night');
+    }  
   };
 
   useEffect(() => {
@@ -33,13 +39,7 @@ function CurrentWeather({ data, currentConditions }) {
     }
   }, [coordinates]);
 
-  let cardBackground;
 
-  if (currentWeather.current.is_day === 1) {
-    cardBackground = "day";
-  } else if (currentWeather.current.is_day === 0) {
-    cardBackground = "night";
-  }
 
   return (
     <Fragment>

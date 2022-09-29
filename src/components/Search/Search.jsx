@@ -33,7 +33,7 @@ function Search({ onSearchChange }) {
   return (
     <AsyncSelect
       className={classes.search}
-      placeholder="Search for city"
+      placeholder="Search for a city"
       value={selectedValue}
       onChange={handleOnchange}
       loadOptions={loadOptions}

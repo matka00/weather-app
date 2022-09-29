@@ -14,7 +14,7 @@
   background-image: linear-gradient(
     to bottom right,
     rgba(202, 234, 236, 0.9),
-    rgba(255, 255, 255, 0.2)
+    rgba(255, 255, 255, 0.5)
   );
   color: rgb(19, 54, 54);
 }
@@ -23,7 +23,7 @@
   background-image: linear-gradient(
     to bottom right,
     rgba(66, 90, 92, 0.9),
-    rgba(255, 255, 255, 0.2)
+    rgba(255, 255, 255, 0.5)
   );
   color: #fff;
 }
@@ -40,12 +40,12 @@ h3 {
 
 .country {
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
 }
 
 .date {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
 }
 
@@ -53,8 +53,7 @@ h5 {
   width: 150px;
   line-height: 14px;
   margin: 0;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 15px;
 }
 
 p {
@@ -62,7 +61,7 @@ p {
   line-height: 14px;
   margin: 0;
   text-align: end;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 hr {
@@ -77,6 +76,7 @@ hr {
   flex-direction: column;
   gap: 8px;
   margin: 0 auto;
+  font-weight: 700;
 }
 
 .detail-units {

@@ -3,10 +3,14 @@
     width: 100vw;
     height: 100vh;
     z-index: -100;
-    background-color: aquamarine;
+    background-image: url('/src/assets/background-pictures/main_background.jpg');
     background-size: cover;
     background-position: center;
 
+}
+
+.base{
+    background-image: url('/src/assets/background-pictures/main_background.jpg');
 }
 
 .clear-1{
