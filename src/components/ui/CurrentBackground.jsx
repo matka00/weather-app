@@ -10,7 +10,7 @@ function CurrentBackground(props) {
   //isDay: 1 means day & isDay: 0 means night
   //condition code list: https://www.weatherapi.com/docs/weather_conditions.json
 
-  console.log(conditions);
+  //console.log(conditions);
 
   let backgroundClass;
 

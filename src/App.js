@@ -1,8 +1,8 @@
 import { Fragment, useState } from "react";
 import Search from "./components/search/Search";
 import CurrentBackground from "./components/ui/CurrentBackground";
-import CurrentWeather from "./components/weather/CurrentWeather";
 import "./App.css";
+import Weather from "./components/weather/Weather";
 
 function App() {
   const [selectedCity, setSelectedCity] = useState(null);
@@ -12,15 +12,15 @@ function App() {
     setSelectedCity(searchData);
   };
 
-  const currentConditions = (isDay, conditionCode) => {
+  const getConditions = (isDay, code) => {
     let conditionData = {
       isDay: isDay,
-      conditionCode: conditionCode,
+      conditionCode: code,
     };
     setConditions(conditionData);
   };
 
-  console.log(selectedCity);
+  //console.log(selectedCity);
   console.log(conditions);
 
   return (
@@ -32,10 +32,7 @@ function App() {
           <Search onSearchChange={handleOnSearchChange} />
         </header>
         {selectedCity && (
-          <CurrentWeather
-            data={selectedCity}
-            currentConditions={currentConditions}
-          />
+          <Weather data={selectedCity} getConditions={getConditions} />
         )}
       </section>
     </Fragment>

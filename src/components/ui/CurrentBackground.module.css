@@ -1,90 +1,89 @@
-.main{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    z-index: -100;
-    background-image: url('/src/assets/background-pictures/main_background.jpg');
-    background-size: cover;
-    background-position: center;
-
+.main {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
+  background-image: url("/src/assets/background-pictures/main_background.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.base{
-    background-image: url('/src/assets/background-pictures/main_background.jpg');
+.base {
+  background-color: transparent;
 }
 
-.clear-1{
-    background-image: url('/src/assets/background-pictures/clear_day.jpg');
+.clear-1 {
+  background-image: url("/src/assets/background-pictures/clear_day.jpg");
 }
 
-.clear-0{
-    background-image: url('/src/assets/background-pictures/clear_night.jpg');
+.clear-0 {
+  background-image: url("/src/assets/background-pictures/clear_night.jpg");
 }
 
-.partly-1{
-    background-image: url('/src/assets/background-pictures/partly_day.jpg');
+.partly-1 {
+  background-image: url("/src/assets/background-pictures/partly_day.jpg");
 }
 
-.partly-0{
-    background-image: url('/src/assets/background-pictures/partly_night.jpg');
+.partly-0 {
+  background-image: url("/src/assets/background-pictures/partly_night.jpg");
 }
 
-.cloud-1{
-    background-image: url('/src/assets/background-pictures/clouds_day.jpg');
+.cloud-1 {
+  background-image: url("/src/assets/background-pictures/clouds_day.jpg");
 }
 
-.cloud-0{
-    background-image: url('/src/assets/background-pictures/clouds_night.jpg');
+.cloud-0 {
+  background-image: url("/src/assets/background-pictures/clouds_night.jpg");
 }
 
-.mist-1{
-    background-image: url('/src/assets/background-pictures/mist_day.jpg');
+.mist-1 {
+  background-image: url("/src/assets/background-pictures/mist_day.jpg");
 }
 
-.mist-0{
-    background-image: url('/src/assets/background-pictures/mist_night.jpg');
+.mist-0 {
+  background-image: url("/src/assets/background-pictures/mist_night.jpg");
 }
 
-.rain-1{
-    background-image: url('/src/assets/background-pictures/rain_day.jpg');
+.rain-1 {
+  background-image: url("/src/assets/background-pictures/rain_day.jpg");
 }
 
-.rain-0{
-    background-image: url('/src/assets/background-pictures/rain_night.jpg');
+.rain-0 {
+  background-image: url("/src/assets/background-pictures/rain_night.jpg");
 }
 
-.snow-1{
-    background-image: url('/src/assets/background-pictures/snow_day.jpg');
+.snow-1 {
+  background-image: url("/src/assets/background-pictures/snow_day.jpg");
 }
 
-.snow-0{
-    background-image: url('/src/assets/background-pictures/snow_night.jpg');
+.snow-0 {
+  background-image: url("/src/assets/background-pictures/snow_night.jpg");
 }
 
-.sleet-1{
-    background-image: url('/src/assets/background-pictures/sleet_day.jpg');
+.sleet-1 {
+  background-image: url("/src/assets/background-pictures/sleet_day.jpg");
 }
 
-.sleet-0{
-    background-image: url('/src/assets/background-pictures/sleet_night.jpg');
+.sleet-0 {
+  background-image: url("/src/assets/background-pictures/sleet_night.jpg");
 }
 
-.storm-1{
-    background-image: url('/src/assets/background-pictures/storm_day.jpg');
+.storm-1 {
+  background-image: url("/src/assets/background-pictures/storm_day.jpg");
 }
 
-.storm-0{
-    background-image: url('/src/assets/background-pictures/storm_night.jpg');
+.storm-0 {
+  background-image: url("/src/assets/background-pictures/storm_night.jpg");
 }
 
-.hail-1{
-    background-image: url('/src/assets/background-pictures/hail_day.jpg');
+.hail-1 {
+  background-image: url("/src/assets/background-pictures/hail_day.jpg");
 }
 
-.hail-0{
-    background-image: url('/src/assets/background-pictures/hail_night.jpg');
+.hail-0 {
+  background-image: url("/src/assets/background-pictures/hail_night.jpg");
 }
 
-.base{
-    background-color: darkslategray;
+.base {
+  background-color: darkslategray;
 }

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import AsyncSelect from "react-select/async";
 import { WEATHERAPI_KEY, WEATHERAPI_URL } from "../../api/apiData";
-import classes from './Search.module.css';
+import classes from "./Search.module.css";
 
 function Search({ onSearchChange }) {
   const [selectedValue, setSelectedValue] = useState(null);
-  console.log(selectedValue)
+  //console.log(selectedValue)
 
   const loadOptions = async (inputValue) => {
-    try{
+    try {
       const response = await fetch(
         `${WEATHERAPI_URL}/search.json?key=${WEATHERAPI_KEY}&q=${inputValue}`
       );
@@ -19,9 +19,9 @@ function Search({ onSearchChange }) {
           label: `${city.name}, ${city.country}`,
         };
       });
-      return loadedOptions
-    } catch(error){
-      console.log(error)
+      return loadedOptions;
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -29,7 +29,7 @@ function Search({ onSearchChange }) {
     setSelectedValue(searchData);
     onSearchChange(searchData);
   };
-  
+
   return (
     <AsyncSelect
       className={classes.search}
