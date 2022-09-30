@@ -3,6 +3,15 @@ body {
   background-image: url("/src/assets/background-pictures/main_background.jpg");
   background-size: cover;
   background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: auto;
 }
 
 header {

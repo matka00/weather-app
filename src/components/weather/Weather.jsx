@@ -2,6 +2,8 @@ import React, { Fragment, useEffect, useState } from "react";
 import { WEATHERAPI_KEY, WEATHERAPI_URL } from "../../api/apiData";
 import Loader from "../ui/Loader";
 import CurrentWeather from "./CurrentWeather";
+import HourlyWeather from "./HourlyWeather";
+import classes from "./Weather.module.css";
 
 function Weather({ data, getConditions }) {
   const [allWeatherData, setAllWeatherData] = useState(null);
@@ -15,7 +17,7 @@ function Weather({ data, getConditions }) {
 
   const loadCurrentWeather = async (latLonData) => {
     const response = await fetch(
-      `${WEATHERAPI_URL}/forecast.json?key=${WEATHERAPI_KEY}&q=${latLonData}&days=1`
+      `${WEATHERAPI_URL}/forecast.json?key=${WEATHERAPI_KEY}&q=${latLonData}&days=5`
     );
     const allWeatherData = await response.json();
     setAllWeatherData(allWeatherData);
@@ -48,12 +50,19 @@ function Weather({ data, getConditions }) {
     <Fragment>
       {isLoading && <Loader />}
       {allWeatherData && !isLoading && (
-        <CurrentWeather
-          currentWeather={allWeatherData.current}
-          locationData={location}
-          cardBackground={cardBackground}
-          city={data.label}
-        />
+        <section className={classes["main-container"]}>
+          <CurrentWeather
+            currentWeather={allWeatherData.current}
+            locationData={location}
+            cardBackground={cardBackground}
+            city={data.label}
+          />
+          <HourlyWeather
+            hourlyWeather={allWeatherData.forecast.forecastday[0]}
+            cardBackground={cardBackground}
+            localTime={allWeatherData.location.localtime}
+          />
+        </section>
       )}
     </Fragment>
   );

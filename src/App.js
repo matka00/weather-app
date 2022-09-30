@@ -24,9 +24,9 @@ function App() {
   console.log(conditions);
 
   return (
-    <Fragment>
+    <section className="app-container">
       {conditions && <CurrentBackground conditionData={conditions} />}
-      <section className="main-section">
+      <div className="main-section">
         <header>
           <h1>Check the weather</h1>
           <Search onSearchChange={handleOnSearchChange} />
@@ -34,8 +34,8 @@ function App() {
         {selectedCity && (
           <Weather data={selectedCity} getConditions={getConditions} />
         )}
-      </section>
-    </Fragment>
+      </div>
+    </section>
   );
 }
 

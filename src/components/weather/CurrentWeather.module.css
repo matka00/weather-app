@@ -28,49 +28,24 @@
   color: #fff;
 }
 
-.left-section {
+.current-card .left-section {
   width: 250px;
 }
 
-h3 {
-  font-size: 30px;
-  font-weight: 700;
-  margin: 0;
-}
 
-.country {
+.current-card .country {
   margin-bottom: 10px;
   font-size: 15px;
   font-weight: 400;
 }
 
-.date {
+.current-card .date {
   font-size: 15px;
   font-weight: 400;
 }
 
-h5 {
-  width: 150px;
-  line-height: 14px;
-  margin: 0;
-  font-size: 15px;
-}
 
-p {
-  width: 150px;
-  line-height: 14px;
-  margin: 0;
-  text-align: end;
-  font-size: 15px;
-}
-
-hr {
-  width: 100%;
-  margin: 20px 0;
-  border: 1px dotted;
-}
-
-.details {
+.current-card .details {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -79,36 +54,64 @@ hr {
   font-weight: 700;
 }
 
-.detail-units {
+.current-card .detail-units {
   display: flex;
   justify-content: flex-start;
 }
 
-.right-section {
+.current-card .right-section {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 
-.condition {
+.current-card .condition {
   text-align: center;
 }
 
-img {
+.current-card img {
   width: 130px;
   height: 130px;
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.3));
 }
 
-h2 {
+.current-card h2 {
   margin: 0;
   font-size: 50px;
 }
 
-h4 {
+.current-card h3 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+.current-card h4 {
   width: 150px;
   font-size: 20px;
   font-weight: 700;
   margin: 0;
+}
+
+.current-card h5 {
+  width: 150px;
+  line-height: 14px;
+  margin: 0;
+  font-size: 15px;
+}
+
+.current-card p {
+  width: 150px;
+  line-height: 14px;
+  margin: 0;
+  text-align: end;
+  font-size: 15px;
+}
+
+.current-card hr {
+  width: 100%;
+  margin: 20px 0;
+  border: 1px dotted;
 }
