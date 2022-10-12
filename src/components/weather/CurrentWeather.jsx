@@ -1,74 +1,95 @@
 import React, { Fragment } from "react";
 import classes from "./CurrentWeather.module.css";
 
-function CurrentWeather({
-  currentWeather,
-  locationData,
-  cardBackground,
-  city,
-}) {
+function CurrentWeather({ currentWeather, locationData, partOfTheDay, city }) {
   return (
     <Fragment>
       {currentWeather && (
         <section
-          className={`${classes["current-card"]} ${classes[cardBackground]}`}
+          className={`${classes["current-card"]} ${classes[partOfTheDay]}`}
         >
-          <div className={classes["left-section"]}>
-            <div className={classes["location-info"]}>
-              <div className="location">
-                <h3>{city.split(",")[0]},</h3>
-                <h3 className={classes.country}>{city.split(",")[1]}</h3>
-                <h4>{locationData.localtime.split(" ")[1]}</h4>
-                <h4 className={classes.date}>
-                  {locationData.localtime.split(" ")[0]}
-                </h4>
-              </div>
+          <div className={classes["top-section"]}>
+            <div className="location">
+              <h3>{city.split(",")[0]},</h3>
+              <h3 className={classes.country}>{city.split(",")[1]}</h3>
+              <h4>{locationData.localtime.split(" ")[1]}</h4>
+              <h4 className={classes.date}>
+                {locationData.localtime.split(" ")[0]}
+              </h4>
             </div>
-            <hr />
-            <div className={classes.details}>
+            <div className={classes["top-right-section"]}>
+              <div className={classes.condition}>
+                <img
+                  src={require(`../../assets/icons/${currentWeather.condition.code}-${currentWeather.is_day}.svg`)}
+                  alt="Weather condition"
+                ></img>
+                <h4>{currentWeather.condition.text}</h4>
+              </div>
+              <h2>{currentWeather.temp_c}°C</h2>
+            </div>
+          </div>
+          <hr />
+          <div className={classes.details}>
+            <div className={classes["detail-sections"]}>
               <div className={classes["detail-units"]}>
-                <h5>Feels like</h5>
+                <img
+                  src={require(`../../assets/detail-icons/feels_${partOfTheDay}.png`)}
+                  alt="Weather condition"
+                ></img>
                 <p>{currentWeather.feelslike_c} °C</p>
               </div>
               <div className={classes["detail-units"]}>
-                <h5>Clouds</h5>
+                <img
+                  src={require(`../../assets/detail-icons/clouds_${partOfTheDay}.png`)}
+                  alt="Weather condition"
+                ></img>
                 <p>{currentWeather.cloud} %</p>
               </div>
               <div className={classes["detail-units"]}>
-                <h5>Humidity</h5>
+                <img
+                  src={require(`../../assets/detail-icons/humidity_${partOfTheDay}.png`)}
+                  alt="Weather condition"
+                ></img>
                 <p>{currentWeather.humidity} %</p>
               </div>
               <div className={classes["detail-units"]}>
-                <h5>Precipitation</h5>
+                <img
+                  src={require(`../../assets/detail-icons/precipitation_${partOfTheDay}.png`)}
+                  alt="Weather condition"
+                ></img>
                 <p>{currentWeather.precip_mm} mm</p>
               </div>
+            </div>
+            <div className={classes["detail-sections"]}>
               <div className={classes["detail-units"]}>
-                <h5>UV</h5>
+                <img
+                  src={require(`../../assets/detail-icons/uv_${partOfTheDay}.png`)}
+                  alt="Weather condition"
+                ></img>
                 <p>{currentWeather.uv}</p>
               </div>
               <div className={classes["detail-units"]}>
-                <h5>Wind</h5>
+                <img
+                  src={require(`../../assets/detail-icons/wind_${partOfTheDay}.png`)}
+                  alt="Weather condition"
+                ></img>
                 <p>{currentWeather.wind_kph} km/h</p>
               </div>
               <div className={classes["detail-units"]}>
-                <h5>Wind gust</h5>
+                <img
+                  src={require(`../../assets/detail-icons/gust_${partOfTheDay}.png`)}
+                  alt="Weather condition"
+                ></img>
                 <p>{currentWeather.gust_kph} km/h</p>
               </div>
               <div className={classes["detail-units"]}>
-                <h5>Pressure</h5>
-                <p>{currentWeather.pressure_mb} mb</p>
+                <img
+                  src={require(`../../assets/detail-icons/pressure_${partOfTheDay}.png`)}
+                  alt="Weather condition"
+                ></img>
+                <p>{currentWeather.pressure_mb} hPa</p>
               </div>
             </div>
-          </div>
-          <div className={classes["right-section"]}>
-            <div className={classes.condition}>
-              <img
-                src={require(`../../assets/icons/${currentWeather.condition.code}-${currentWeather.is_day}.svg`)}
-                alt="Weather condition"
-              ></img>
-              <h4>{currentWeather.condition.text}</h4>
-            </div>
-            <h2>{currentWeather.temp_c}°C</h2>
           </div>
         </section>
       )}

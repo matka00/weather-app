@@ -1,11 +1,13 @@
+/* main */
 .current-card {
-  width: 450px;
+  width: 90vw;
+  max-width: 600px;
   height: auto;
+  box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 30px;
   border-radius: 20px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
@@ -28,90 +30,216 @@
   color: #fff;
 }
 
-.current-card .left-section {
-  width: 250px;
+/* top-section */
+
+.current-card .top-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-
-.current-card .country {
+.current-card .top-section .country {
   margin-bottom: 10px;
-  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.current-card .top-section .date {
   font-weight: 400;
 }
 
-.current-card .date {
-  font-size: 15px;
-  font-weight: 400;
+.current-card .top-section .top-right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 15px;
 }
 
+.current-card .top-section .top-right-section h2 {
+  margin: 10px 0 0;
+}
+
+.current-card .top-section .top-right-section .condition {
+  text-align: center;
+}
+
+.current-card .top-section .top-right-section .condition img {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.3));
+}
+
+.current-card .top-section h3 {
+  font-weight: 700;
+  margin: 0;
+}
+
+.current-card .top-section h4 {
+  font-weight: 700;
+  margin: 0;
+}
+
+/* separator */
+
+.current-card hr {
+  width: 100%;
+  margin: 15px 0;
+  border: 1px dotted;
+}
+
+/* bottom-section - details */
 
 .current-card .details {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-direction: row;
+  justify-content: space-between;
   margin: 0 auto;
   font-weight: 700;
 }
 
-.current-card .detail-units {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.current-card .right-section {
+.current-card .details .detail-sections {
+  width: 45%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  gap: 5px;
+}
+
+.current-card .details .detail-units {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.current-card .condition {
-  text-align: center;
-}
-
-.current-card img {
-  width: 130px;
-  height: 130px;
-  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.3));
-}
-
-.current-card h2 {
-  margin: 0;
-  font-size: 50px;
-}
-
-.current-card h3 {
-  font-size: 30px;
-  font-weight: 700;
-  margin: 0;
-}
-
-
-.current-card h4 {
-  width: 150px;
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.current-card h5 {
-  width: 150px;
-  line-height: 14px;
-  margin: 0;
-  font-size: 15px;
-}
-
-.current-card p {
-  width: 150px;
-  line-height: 14px;
+.current-card .details .detail-units p {
   margin: 0;
   text-align: end;
-  font-size: 15px;
 }
 
-.current-card hr {
-  width: 100%;
-  margin: 20px 0;
-  border: 1px dotted;
+/* mobile */
+
+@media (max-width: 320px) {
+  .current-card {
+    padding: 20px;
+  }
+
+  .current-card .top-section .country,
+  .current-card .top-section .date {
+    font-size: 12px;
+  }
+
+  .current-card .top-section .top-right-section .condition img {
+    width: 100px;
+    height: 90px;
+    object-fit: cover;
+  }
+
+  .current-card .top-section .top-right-section h2 {
+    font-size: 25px;
+  }
+
+  .current-card .top-section h3 {
+    font-size: 18px;
+  }
+
+  .current-card .top-section h4 {
+    font-size: 16px;
+  }
+
+  .current-card .details .detail-units img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .current-card .details .detail-units p {
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+  }
+}
+
+/* tablet */
+
+@media (min-width: 321px) and (max-width: 768px) {
+  .current-card {
+    padding: 25px;
+  }
+
+  .current-card .top-section .country,
+  .current-card .top-section .date {
+    font-size: 14px;
+  }
+
+  .current-card .date {
+    font-size: 10px;
+  }
+
+  .current-card .top-section .top-right-section .condition img {
+    width: 90px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .current-card .top-section .top-right-section h2 {
+    font-size: 25px;
+  }
+
+  .current-card .top-section h3 {
+    font-size: 24px;
+  }
+
+  .current-card .top-section h4 {
+    font-size: 18px;
+  }
+
+  .current-card .details .detail-units img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .current-card .details .detail-units p {
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 769px) {
+  .current-card {
+    padding: 30px;
+  }
+
+  .current-card .top-section .country,
+  .current-card .top-section .date {
+    font-size: 15px;
+  }
+
+  .current-card .top-section .top-right-section .condition img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .current-card .top-section .top-right-section h2 {
+    font-size: 50px;
+  }
+
+  .current-card .top-section h3 {
+    font-size: 30px;
+  }
+
+  .current-card .top-section h4 {
+    font-size: 18px;
+  }
+
+  .current-card .details .detail-units img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .current-card .details .detail-units p {
+    height: 18px;
+    line-height: 18px;
+    font-size: 18px;
+  }
 }

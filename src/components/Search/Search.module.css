@@ -1,5 +1,27 @@
 .search {
   width: 30%;
-  min-width: 400px;
+  min-width: 280px;
   margin: 10px 20px 20px;
+}
+
+@media (max-width: 320px) {
+  .search {
+    font-size: 14px;
+  }
+}
+
+/* tablet */
+
+@media (min-width: 321px) and (max-width: 768px) {
+  .search {
+    font-size: 14px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 769px) {
+  .search {
+    font-size: 16px;
+  }
 }

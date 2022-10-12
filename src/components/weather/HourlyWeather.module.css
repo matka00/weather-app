@@ -2,66 +2,7 @@
   width: 90%;
   height: auto;
   margin-bottom: 50px;
-  border-radius: 20px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-}
-
-.hourly-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 20px;
-  padding: 20px 20px 30px;
-}
-
-.hourly-card img {
-  width: 80px;
-  height: 80px;
-}
-
-.hourly-card .hour {
-  text-align: center;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.hourly-card .condition {
-  height: 35px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.hourly-card .degree {
-  font-size: 18px;
-  font-weight: 700;
-  margin: 10px 0;
-}
-
-.hourly-card hr {
-  width: 100%;
-  margin: 20px 0;
-  border: 1px dotted;
-}
-
-.hourly-card .details {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.hourly-card .detail-units {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.hourly-card h5,
-.hourly-card p {
-  font-size: 14px;
-  font-weight: 700;
-  margin: 0;
 }
 
 .day {
@@ -80,4 +21,102 @@
     rgba(255, 255, 255, 0.5)
   );
   color: #fff;
+}
+
+.hourly-section .hourly-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  padding: 20px 20px 30px;
+}
+
+.hourly-card .hour {
+  text-align: center;
+  font-weight: 700;
+}
+
+.hourly-card img {
+  width: 70px;
+  height: 70px;
+}
+
+.hourly-card .condition {
+  text-align: center;
+  font-weight: 700;
+}
+
+.hourly-card .degree {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.hourly-card hr {
+  width: 100%;
+  margin: 10px 0 15px;
+  border: 1px dotted;
+}
+
+.hourly-card .details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hourly-card .details img {
+  width: 20px;
+  height: 20px;
+}
+
+.hourly-card .detail-units {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hourly-card p {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* mobile */
+
+@media (max-width: 320px) {
+  .hourly-card .hour {
+    font-size: 16px;
+  }
+
+  .hourly-card .condition {
+    height: 42px;
+    font-size: 14px;
+  }
+}
+
+/* tablet */
+
+@media (min-width: 321px) and (max-width: 768px) {
+  .hourly-card .hour {
+    font-size: 16px;
+  }
+
+  .hourly-card .condition {
+    height: 42px;
+    font-size: 14px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 769px) {
+  .hourly-card .hour {
+    font-size: 18px;
+  }
+
+  .hourly-card .condition {
+    height: 35px;
+    font-size: 16px;
+  }
 }

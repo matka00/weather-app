@@ -8,7 +8,7 @@ import classes from "./Weather.module.css";
 function Weather({ data, getConditions }) {
   const [allWeatherData, setAllWeatherData] = useState(null);
   const [location, setLoaction] = useState(null);
-  const [cardBackground, setCardBackground] = useState(null);
+  const [partOfTheDay, setPartOfTheDay] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const coordinates = data.value;
@@ -28,9 +28,9 @@ function Weather({ data, getConditions }) {
     );
     setIsLoading(false);
     if (allWeatherData.current.is_day === 1) {
-      setCardBackground("day");
+      setPartOfTheDay("day");
     } else if (allWeatherData.current.is_day === 0) {
-      setCardBackground("night");
+      setPartOfTheDay("night");
     }
   };
 
@@ -54,12 +54,12 @@ function Weather({ data, getConditions }) {
           <CurrentWeather
             currentWeather={allWeatherData.current}
             locationData={location}
-            cardBackground={cardBackground}
+            partOfTheDay={partOfTheDay}
             city={data.label}
           />
           <HourlyWeather
             hourlyWeather={allWeatherData.forecast.forecastday[0]}
-            cardBackground={cardBackground}
+            partOfTheDay={partOfTheDay}
             localTime={allWeatherData.location.localtime}
           />
         </section>
