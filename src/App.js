@@ -3,6 +3,8 @@ import Search from "./components/search/Search";
 import CurrentBackground from "./components/ui/CurrentBackground";
 import "./App.css";
 import Weather from "./components/weather/Weather";
+import Footer from "./components/header-footer/Footer";
+import Header from "./components/header-footer/Header";
 
 function App() {
   const [selectedCity, setSelectedCity] = useState(null);
@@ -27,13 +29,11 @@ function App() {
     <section className="app-container">
       {conditions && <CurrentBackground conditionData={conditions} />}
       <div className="main-section">
-        <header>
-          <h1>Check the weather</h1>
-          <Search onSearchChange={handleOnSearchChange} />
-        </header>
+        <Header onSearchChange={handleOnSearchChange} />
         {selectedCity && (
           <Weather data={selectedCity} getConditions={getConditions} />
         )}
+        <Footer />
       </div>
     </section>
   );

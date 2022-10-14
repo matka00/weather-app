@@ -17,6 +17,7 @@ function HourlyWeather({ hourlyWeather, partOfTheDay, localTime }) {
 
   return (
     <section className={classes["hourly-section"]}>
+      <div className={classes["hourly-tag"]}>Hourly forecast</div>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={0}
