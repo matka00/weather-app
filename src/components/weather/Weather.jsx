@@ -13,7 +13,7 @@ function Weather({ data, getConditions }) {
 
   const coordinates = data.value;
 
-  console.log(allWeatherData);
+  //console.log(allWeatherData);
 
   const loadCurrentWeather = async (latLonData) => {
     const response = await fetch(

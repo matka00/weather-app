@@ -169,6 +169,7 @@ function CurrentBackground(props) {
   };
 
   getBackgroundClass();
+  props.getBackgroundClass(backgroundClass);
 
   return <div className={`${classes.main} ${classes[backgroundClass]}`}></div>;
 }

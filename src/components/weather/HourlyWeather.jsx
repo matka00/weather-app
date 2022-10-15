@@ -9,11 +9,11 @@ import "swiper/css/scrollbar";
 import classes from "./HourlyWeather.module.css";
 
 function HourlyWeather({ hourlyWeather, partOfTheDay, localTime }) {
-  console.log(hourlyWeather);
+  //console.log(hourlyWeather);
 
   let currentTime = localTime.split(" ")[1];
   let currentHour = currentTime.split(":")[0];
-  console.log(currentHour);
+  //console.log(currentHour);
 
   return (
     <section className={classes["hourly-section"]}>
