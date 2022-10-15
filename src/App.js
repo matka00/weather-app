@@ -21,13 +21,11 @@ function App() {
       conditionCode: code,
     };
     setConditions(conditionData);
-
-    if (isDay === 0) {
-      setDayCode("night");
-    } else {
-      setDayCode("day");
-    }
   };
+
+  const getPartOfTheDay = (dayCode) => {
+    setDayCode(dayCode)
+  }
 
   const getBackgroundClass = (backgroundClass) => {
     setBackgroundClass(backgroundClass);
@@ -47,7 +45,7 @@ function App() {
       <div className="main-section">
         <Header onSearchChange={handleOnSearchChange} />
         {selectedCity && (
-          <Weather data={selectedCity} getConditions={getConditions} />
+          <Weather data={selectedCity} getConditions={getConditions} getPartOfTheDay={getPartOfTheDay}/>
         )}
         <Footer isDay={dayCode} backgroundClass={backgroundClass} />
       </div>

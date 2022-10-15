@@ -5,7 +5,7 @@ import CurrentWeather from "./CurrentWeather";
 import HourlyWeather from "./HourlyWeather";
 import classes from "./Weather.module.css";
 
-function Weather({ data, getConditions }) {
+function Weather({ data, getConditions, getPartOfTheDay }) {
   const [allWeatherData, setAllWeatherData] = useState(null);
   const [location, setLoaction] = useState(null);
   const [partOfTheDay, setPartOfTheDay] = useState(null);
@@ -13,7 +13,7 @@ function Weather({ data, getConditions }) {
 
   const coordinates = data.value;
 
-  //console.log(allWeatherData);
+  console.log(allWeatherData);
 
   const loadCurrentWeather = async (latLonData) => {
     const response = await fetch(
@@ -29,8 +29,10 @@ function Weather({ data, getConditions }) {
     setIsLoading(false);
     if (allWeatherData.current.is_day === 1) {
       setPartOfTheDay("day");
+      getPartOfTheDay("day");
     } else if (allWeatherData.current.is_day === 0) {
       setPartOfTheDay("night");
+      getPartOfTheDay("night");
     }
   };
 
