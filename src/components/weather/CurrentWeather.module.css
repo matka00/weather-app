@@ -48,6 +48,10 @@
   font-weight: 400;
 }
 
+.current-card .top-section .today {
+  margin-top: 10px;
+}
+
 .current-card .top-section .top-right-section {
   display: flex;
   flex-direction: column;

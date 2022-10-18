@@ -1,0 +1,271 @@
+.daily-section {
+  width: 90%;
+  margin: 0 0 50px;
+}
+
+.daily-section .daily-tag {
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(14, 41, 41, 0.8),
+    rgba(45, 75, 75, 0.8)
+  );
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.day {
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(202, 234, 236, 1),
+    rgba(255, 255, 255, 0.7)
+  );
+  color: rgb(19, 54, 54);
+  border-color: rgb(19, 54, 54);
+}
+
+.night {
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(66, 90, 92, 1),
+    rgba(255, 255, 255, 0.7)
+  );
+  color: #fff;
+  border-color: #fff;
+}
+
+/*accordion-heading*/
+
+.daily-section .accordion {
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+.daily-section .accordion img {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.3));
+}
+
+.daily-section .accordion .main-forecast .left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.daily-section .accordion .main-forecast .forecast-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.daily-section .accordion .main-forecast .forecast-date .weekday {
+  font-weight: 700;
+  margin: 0;
+}
+
+.daily-section .accordion .forecast-date .date {
+  font-weight: 400;
+  margin: 0;
+}
+
+.daily-section .accordion .main-forecast {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.daily-section .accordion .left .forecast-conditions .temp {
+  font-weight: 700;
+}
+
+.daily-section .accordion .left .forecast-conditions .condition-text {
+  margin: 0 0 10px;
+}
+
+.daily-section .accordion .main-forecast .left .arrow {
+  width: 5px;
+  height: 5px;
+  margin-bottom: 7px;
+  background-image: none;
+  border: solid;
+  border-width: 0 2px 2px 0;
+  border-radius: 2px;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+}
+
+.daily-section .accordion hr {
+  width: 100%;
+  margin: 10px 0 15px;
+  border: none;
+  border-bottom: 1px dotted;
+}
+
+/*accordion-panel*/
+.daily-section .accordion .accordion-panel {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+}
+
+.daily-section .accordion .accordion-panel .detail-sections {
+  width: 150px;
+}
+
+.daily-section .accordion .accordion-panel .detail-sections .detail-units {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.daily-section .accordion .accordion-panel .detail-sections .detail-units img {
+  width: 20px;
+  height: 20px;
+}
+
+/* mobile */
+
+@media (max-width: 320px) {
+  .daily-section .daily-tag {
+    font-size: 14px;
+  }
+
+  .daily-section .accordion {
+    font-size: 14px;
+  }
+
+  .daily-section .accordion .main-forecast .forecast-date .date {
+    font-size: 12px;
+  }
+
+  .daily-section .accordion .left .forecast-conditions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+  }
+
+  .daily-section .accordion .forecast-conditions .temp {
+    text-align: end;
+  }
+
+  .daily-section .accordion .left .forecast-conditions img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .daily-section .accordion .left .forecast-conditions .condition-text {
+    text-align: end;
+  }
+
+  .daily-section .accordion .accordion-panel {
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .daily-section .accordion .accordion-panel .detail-sections {
+    width: 100px;
+  }
+}
+
+/* tablet */
+
+@media (min-width: 321px) and (max-width: 768px) {
+  .daily-section .daily-tag {
+    font-size: 16px;
+  }
+
+  .daily-section .accordion {
+    font-size: 14px;
+  }
+
+  .daily-section .accordion .main-forecast .forecast-date .date {
+    font-size: 12px;
+  }
+
+  .daily-section .accordion .left .forecast-conditions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+  }
+
+  .daily-section .accordion .forecast-conditions .temp {
+    width: 110px;
+    text-align: end;
+  }
+
+  .daily-section .accordion .left .forecast-conditions img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .daily-section .accordion .left .forecast-conditions .condition-text {
+    width: 150px;
+    text-align: end;
+  }
+
+  .daily-section .accordion .accordion-panel .detail-sections {
+    width: 150px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 769px) {
+  .daily-section .daily-tag {
+    font-size: 16px;
+  }
+
+  .daily-section .accordion {
+    font-size: 16px;
+  }
+
+  .daily-section .accordion .main-forecast .forecast-date .date {
+    font-size: 14px;
+  }
+
+  .daily-section .accordion .left .forecast-conditions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .daily-section .accordion .forecast-conditions .temp {
+    width: 110px;
+    text-align: end;
+  }
+
+  .daily-section .accordion .left .forecast-conditions img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .daily-section .accordion .left .forecast-conditions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .daily-section .accordion .left .forecast-conditions .condition-text {
+    width: 150px;
+    text-align: end;
+  }
+
+  .daily-section .accordion .accordion-panel .detail-sections {
+    width: 150px;
+  }
+}
