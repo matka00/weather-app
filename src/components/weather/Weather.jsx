@@ -2,8 +2,22 @@ import React, { Fragment, useEffect, useState } from "react";
 import { WEATHERAPI_KEY, WEATHERAPI_URL } from "../../api/apiData";
 import Loader from "../ui/Loader";
 import CurrentWeather from "./CurrentWeather";
+import DailyForecast from "./DailyForecast";
 import HourlyWeather from "./HourlyWeather";
 import classes from "./Weather.module.css";
+
+const weekDays = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+];
 
 function Weather({ data, getConditions, getPartOfTheDay }) {
   const [allWeatherData, setAllWeatherData] = useState(null);
@@ -12,6 +26,10 @@ function Weather({ data, getConditions, getPartOfTheDay }) {
   const [isLoading, setIsLoading] = useState(false);
 
   const coordinates = data.value;
+
+  const dayOfTheWeek = new Date().getDay();
+  const today = weekDays[dayOfTheWeek - 1];
+  const forecastDays = weekDays.slice(dayOfTheWeek);
 
   console.log(allWeatherData);
 
@@ -58,12 +76,22 @@ function Weather({ data, getConditions, getPartOfTheDay }) {
             locationData={location}
             partOfTheDay={partOfTheDay}
             city={data.label}
+            today={today}
           />
-          <HourlyWeather
-            hourlyWeather={allWeatherData.forecast.forecastday[0]}
-            partOfTheDay={partOfTheDay}
-            localTime={allWeatherData.location.localtime}
-          />
+          {allWeatherData.forecast && (
+            <div className={classes.forecasts}>
+              <HourlyWeather
+                hourlyWeather={allWeatherData.forecast.forecastday[0]}
+                partOfTheDay={partOfTheDay}
+                localTime={allWeatherData.location.localtime}
+              />
+              <DailyForecast
+                dailyForecast={allWeatherData.forecast}
+                partOfTheDay={partOfTheDay}
+                forecastDays={forecastDays}
+              />
+            </div>
+          )}
         </section>
       )}
     </Fragment>

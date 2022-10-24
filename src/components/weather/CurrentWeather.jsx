@@ -1,7 +1,13 @@
 import React, { Fragment } from "react";
 import classes from "./CurrentWeather.module.css";
 
-function CurrentWeather({ currentWeather, locationData, partOfTheDay, city }) {
+function CurrentWeather({
+  currentWeather,
+  locationData,
+  partOfTheDay,
+  city,
+  today,
+}) {
   return (
     <Fragment>
       {currentWeather && (
@@ -16,6 +22,7 @@ function CurrentWeather({ currentWeather, locationData, partOfTheDay, city }) {
               <h4 className={classes.date}>
                 {locationData.localtime.split(" ")[0]}
               </h4>
+              <h4 className={classes.today}>{today}</h4>
             </div>
             <div className={classes["top-right-section"]}>
               <div className={classes.condition}>

@@ -34,8 +34,8 @@ function HourlyWeather({ hourlyWeather, partOfTheDay, localTime }) {
         }}
         navigation
         scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        /* onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log("slide change")} */
         initialSlide={currentHour}
         centeredSlides={true}
       >
