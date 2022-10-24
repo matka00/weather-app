@@ -6,6 +6,7 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
+import ReactTooltip from "react-tooltip";
 import classes from "./DailyForecast.module.css";
 
 function DailyForecast({ dailyForecast, partOfTheDay, forecastDays }) {
@@ -62,32 +63,40 @@ function DailyForecast({ dailyForecast, partOfTheDay, forecastDays }) {
                   <div className={classes["detail-sections"]}>
                     <div className={classes["detail-units"]}>
                       <img
+                        data-tip="humidity"
                         src={require(`../../assets/detail-icons/humidity_${partOfTheDay}.png`)}
                         alt="Weather condition"
                       ></img>
+                      <ReactTooltip place="right" type="dark" effect="float" />
                       <p>{item.day.avghumidity} %</p>
                     </div>
                     <div className={classes["detail-units"]}>
                       <img
+                        data-tip="precipitation"
                         src={require(`../../assets/detail-icons/precipitation_${partOfTheDay}.png`)}
                         alt="Weather condition"
                       ></img>
+                      <ReactTooltip place="right" type="dark" effect="float" />
                       <p>{item.day.totalprecip_mm} mm</p>
                     </div>
                   </div>
                   <div className={classes["detail-sections"]}>
                     <div className={classes["detail-units"]}>
                       <img
+                        data-tip="UV index"
                         src={require(`../../assets/detail-icons/uv_${partOfTheDay}.png`)}
                         alt="Weather condition"
                       ></img>
+                      <ReactTooltip place="right" type="dark" effect="float" />
                       <p>{item.day.uv}</p>
                     </div>
                     <div className={classes["detail-units"]}>
                       <img
+                        data-tip="wind speed"
                         src={require(`../../assets/detail-icons/wind_${partOfTheDay}.png`)}
                         alt="Weather condition"
                       ></img>
+                      <ReactTooltip place="right" type="dark" effect="float" />
                       <p>{item.day.maxwind_kph} km/h</p>
                     </div>
                   </div>
