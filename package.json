@@ -1,5 +1,6 @@
 {
   "name": "weather-app",
+  "homepage": "http://weather.anitaskumat.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

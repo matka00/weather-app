@@ -23,3 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 /photo_links.js
 /src/api/apiData.js
+/.firebaserc
+/firebase.json
+.firebase/hosting.YnVpbGQ.cache
+src/api/apiData.js
+
+/src/api
